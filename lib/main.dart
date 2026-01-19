@@ -38,7 +38,7 @@ class PathBloomHome extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(20, 40, 20, 40),
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [Colors.teal, Colors.green],
+                      colors: [Colors.blue, Colors.teal],
                     ),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(24),
@@ -89,19 +89,26 @@ class PathBloomHome extends StatelessWidget {
                 // ===== info card =====
                 Positioned(
                   bottom: -60,
-                  left: 10,
-                  right: 10,
+                  left: 30,
+                  right: 30,
 
                   child: Card(
                     elevation: 6, // added shadow
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
+                        side: const BorderSide(
+                          color: Colors.green,
+                          width: 1,
+                        )
                     ),
+
                     child: const ListTile(
                       leading: Icon(Icons.wifi_off, color: Colors.green),
                       title: Text('This app works fully offline!'),
                       subtitle: Text(
                         'No data needed. Everything is saved on your phone.',
+                        style: TextStyle(
+                          color: Colors.teal,),
                       ),
                     ),
                   ),
