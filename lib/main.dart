@@ -10,99 +10,112 @@ class DashboardApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const PathBloomHome(),
-      title: 'PathBloom',
+      home: PathBloomHome(),
     );
   }
 }
-// Dashboard screen
+
+// Home screen
 class PathBloomHome extends StatelessWidget {
   const PathBloomHome({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
 
-            // ===== TOP BOX =====
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.fromLTRB(20, 40, 20, 30),                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.teal, Colors.green],
+            Stack(
+              clipBehavior: Clip.none, // for overflow
+              children: [
+
+                // ===== top box =====
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.fromLTRB(20, 40, 20, 40),
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Colors.teal, Colors.green],
+                    ),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(24),
+                      bottomRight: Radius.circular(24),
+                    ),
                   ),
 
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(24),
-                  bottomRight: Radius.circular(24),
-                ),
-
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          'PathBloom ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+                  // app bar
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'PathBloom',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text(
-                          'Your future starts here 🌱 ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
+                          SizedBox(height: 6),
+                          Text(
+                            'Your future starts here 🌱',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
+                        ],
+                      ),
 
-                    // settings
-                    IconButton(
-                      icon: const Icon(Icons.settings,
+                      // Settings icon
+                      IconButton(
+                        icon: const Icon(
+                          Icons.settings,
                           color: Colors.white,
-                          size: 30),
-                      onPressed: () {
-                        // Open settings here
-                      },
-                    ),
-                  ],
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-
-                  // ListTile gives icon + text layout
-                  child: const ListTile(
-                    leading: Icon(Icons.wifi_off, color: Colors.green),
-                    title: Text('This app works fully offline!'),
-                    subtitle: Text(
-                      'No data needed. Everything is saved on your phone.',
-                    ),
+                          size: 32,
+                        ),
+                        onPressed: () {},
+                      ),
+                    ],
                   ),
                 ),
-              ),
 
+                // ===== info card =====
+                Positioned(
+                  bottom: -60,
+                  left: 10,
+                  right: 10,
 
-            ],
-          ),
+                  child: Card(
+                    elevation: 6, // added shadow
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const ListTile(
+                      leading: Icon(Icons.wifi_off, color: Colors.green),
+                      title: Text('This app works fully offline!'),
+                      subtitle: Text(
+                        'No data needed. Everything is saved on your phone.',
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            // ===== SPACE BELOW STACK =====
+            const SizedBox(height: 60),
+
+            // (More content goes here later)
+          ],
         ),
+      ),
     );
   }
 }
