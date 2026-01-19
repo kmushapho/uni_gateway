@@ -81,6 +81,25 @@ class PathBloomHome extends StatelessWidget {
                 ),
               ),
 
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+
+                  // ListTile gives icon + text layout
+                  child: const ListTile(
+                    leading: Icon(Icons.wifi_off, color: Colors.green),
+                    title: Text('This app works fully offline!'),
+                    subtitle: Text(
+                      'No data needed. Everything is saved on your phone.',
+                    ),
+                  ),
+                ),
+              ),
+
+
             ],
           ),
         ),
