@@ -4,52 +4,75 @@ void main() {
   runApp(const DashboardApp());
 }
 
-class DashboardApp extends StatelessWidget {
+class DashboardApp extends StatefulWidget {
   const DashboardApp({super.key});
 
   @override
+  State<DashboardApp> createState() => _DashboardAppState();
+}
+
+class _DashboardAppState extends State<DashboardApp> {
+  ThemeMode _themeMode = ThemeMode.light;
+
+  void _toggleTheme() {
+    setState(() {
+      _themeMode = _themeMode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PathBloomHome(),
+      theme: ThemeData.light(useMaterial3: true),
+      darkTheme: ThemeData.dark(useMaterial3: true),
+      themeMode: _themeMode,
+      home: PathBloomHome(onToggleTheme: _toggleTheme),
     );
   }
 }
 
 class PathBloomHome extends StatelessWidget {
-  const PathBloomHome({super.key});
+  final VoidCallback onToggleTheme;
+
+  const PathBloomHome({
+    super.key,
+    required this.onToggleTheme,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: isDark ? Colors.grey[900] : Colors.grey[50],
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
 
-              // Header + Overlapping Card
+              // Header + overlapping card
               Stack(
                 clipBehavior: Clip.none,
                 children: [
 
-                  // gradient header container
+                  // Gradient header
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.fromLTRB(24, 50, 24, 100),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Colors.blue, Colors.teal],
+                        colors: isDark
+                            ? [Colors.blueGrey[800]!, Colors.teal[900]!]
+                            : [Colors.blue, Colors.teal],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(28),
                         bottomRight: Radius.circular(28),
                       ),
                     ),
-
-                    // header box row + settings button
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +84,7 @@ class PathBloomHome extends StatelessWidget {
                               'PathBloom',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 26,
+                                fontSize: 28,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -76,14 +99,12 @@ class PathBloomHome extends StatelessWidget {
                           ],
                         ),
                         IconButton(
-                          icon: const Icon(
-                            Icons.settings,
+                          icon: Icon(
+                            isDark ? Icons.light_mode : Icons.dark_mode,
                             color: Colors.white,
                             size: 32,
                           ),
-                          onPressed: () {
-                            // TODO: Settings action
-                          },
+                          onPressed: onToggleTheme,
                         ),
                       ],
                     ),
@@ -98,24 +119,33 @@ class PathBloomHome extends StatelessWidget {
                       elevation: 8,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
-                        side: const BorderSide(color: Colors.green, width: 1.5),
+                        side: BorderSide(
+                          color: isDark ? Colors.teal[300]! : Colors.green,
+                          width: 1.5,
+                        ),
                       ),
-                      child: const Padding(
-                        padding: EdgeInsets.all(16),
+                      color: isDark ? Colors.grey[850] : Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
                         child: ListTile(
                           contentPadding: EdgeInsets.zero,
                           leading: Icon(
                             Icons.wifi_off,
-                            color: Colors.green,
+                            color: isDark ? Colors.teal[300] : Colors.green,
                             size: 40,
                           ),
                           title: Text(
                             'This app works fully offline!',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: isDark ? Colors.white : Colors.black87,
+                            ),
                           ),
                           subtitle: Text(
                             'No data needed. Everything is saved on your phone.',
-                            style: TextStyle(color: Colors.teal),
+                            style: TextStyle(
+                              color: isDark ? Colors.teal[200] : Colors.teal[800],
+                            ),
                           ),
                         ),
                       ),
@@ -124,15 +154,13 @@ class PathBloomHome extends StatelessWidget {
                 ],
               ),
 
-              // Spacing after info card
               const SizedBox(height: 70),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: const Text(
+                child: Text(
                   'Choose what you need help with',
-                  style: TextStyle(
-                    fontSize: 18,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -140,7 +168,6 @@ class PathBloomHome extends StatelessWidget {
 
               const SizedBox(height: 24),
 
-              // Grid for options
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: GridView.count(
@@ -149,7 +176,7 @@ class PathBloomHome extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 20,
-                  childAspectRatio: 0.85,
+                  childAspectRatio: 0.88,
                   children: [
                     _buildOptionCard(
                       context,
@@ -197,7 +224,7 @@ class PathBloomHome extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 40), // bottom padding
+              const SizedBox(height: 40),
             ],
           ),
         ),
@@ -212,6 +239,8 @@ class PathBloomHome extends StatelessWidget {
       Color color,
       IconData icon,
       ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return InkWell(
       onTap: () {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -243,8 +272,8 @@ class PathBloomHome extends StatelessWidget {
               const SizedBox(height: 6),
               Text(
                 subtitle,
-                style: const TextStyle(
-                  color: Colors.white70,
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.85),
                   fontSize: 13,
                 ),
                 textAlign: TextAlign.center,
