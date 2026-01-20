@@ -198,14 +198,14 @@ class _CategoryIntroScreenState extends State<CategoryIntroScreen> {
   // icons per category
   IconData _getCategoryIcon(String categoryName) {
     final name = categoryName.toLowerCase();
-    if (name.contains('logical')) return Icons.psychology;
+    if (name.contains('logical')) return Icons.psychology_outlined;
     if (name.contains('verbal')) return Icons.chat_bubble_outline;
-    if (name.contains('numerical')) return Icons.calculate;
-    if (name.contains('spatial')) return Icons.grid_view;
-    if (name.contains('technical')) return Icons.build;
-    if (name.contains('interpersonal')) return Icons.people_alt;
-    if (name.contains('creative')) return Icons.brush;
-    if (name.contains('physical')) return Icons.fitness_center;
+    if (name.contains('numerical')) return Icons.calculate_outlined;
+    if (name.contains('spatial')) return Icons.grid_4x4_outlined;
+    if (name.contains('technical')) return Icons.build_outlined;
+    if (name.contains('interpersonal')) return Icons.people_outline_outlined;
+    if (name.contains('creative')) return Icons.brush_outlined;
+    if (name.contains('physical')) return Icons.fitness_center_outlined;
     return Icons.category;
   }
 }
