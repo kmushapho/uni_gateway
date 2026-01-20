@@ -119,7 +119,7 @@ List<Question> getQuestionsForCategory(String category) {
         Question(
             id: 'lr_h3',
             category: 'logical',
-            questionText: 'CAR = 44, BUS = 84, TRUCK = ? (Sum of letter positions × 2; A=1, Z=26)',
+            questionText: 'CAR = 44, BUS = 84, TRUCK = ?',
             options: ['146', '182', '130', '164'],
             correctOptionIndex: 0,
             difficulty: 'hard',
@@ -397,482 +397,480 @@ List<Question> getQuestionsForCategory(String category) {
       ];
 
 
-  // ---------------- Category 5: Technical/Mechanical ----------------
-    case 'technical':
+  // ---------------- Category: Technical/Mechanical (User-Directed Reasoning) ----------------
+    case 'technical_mechanical':
       return [
         // Easy
         Question(
             id: 'tm_e1',
             category: 'technical',
-            questionText: 'Which tool is best for tightening a bolt?',
-            options: ['Hammer', 'Wrench', 'Saw', 'Ruler'],
-            correctOptionIndex: 1,
+            questionText: 'You need to hang a heavy mirror on a wall. Which of these would provide the most secure support?',
+            options: ['Sticky tape', 'A thin sewing nail', 'A wall plug and screw', 'Blue tack'],
+            correctOptionIndex: 2,
             difficulty: 'easy',
-            explanation: 'A wrench grips the bolt and turns it to make it tight.'
+            explanation: 'A wall plug expands inside the wall to grip the material, allowing it to hold significantly more weight than a nail or adhesive.'
         ),
         Question(
             id: 'tm_e2',
             category: 'technical',
-            questionText: 'What does a thermometer measure?',
-            options: ['Speed', 'Weight', 'Temperature', 'Time'],
-            correctOptionIndex: 2,
+            questionText: 'You are trying to open a tight glass jar. Why does running the metal lid under hot water often help you open it?',
+            options: ['It makes the glass shrink', 'The metal lid expands slightly', 'The water acts as a lubricant', 'The heat melts the glass'],
+            correctOptionIndex: 1,
             difficulty: 'easy',
-            explanation: 'A thermometer shows how hot or cold something is.'
+            explanation: 'Metals expand when heated. Warming the lid makes it slightly larger than the jar neck, loosening the grip.'
         ),
         Question(
             id: 'tm_e3',
             category: 'technical',
-            questionText: 'Which of these is a conductor of electricity?',
-            options: ['Rubber', 'Wood', 'Copper', 'Plastic'],
-            correctOptionIndex: 2,
+            questionText: 'You are using a screwdriver, but it keeps slipping out of the screw head. What is the most likely cause?',
+            options: ['The screwdriver handle is too long', 'The tip size does not match the screw', 'You are turning it too slowly', 'The screw is made of wood'],
+            correctOptionIndex: 1,
             difficulty: 'easy',
-            explanation: 'Copper lets electricity flow through it easily.'
+            explanation: 'Mechanical "fit" is essential; using a tip that is too small or the wrong shape prevents the tool from gripping the slots.'
         ),
         Question(
             id: 'tm_e4',
             category: 'technical',
-            questionText: 'What simple machine is a seesaw?',
-            options: ['Pulley', 'Lever', 'Inclined Plane', 'Wedge'],
-            correctOptionIndex: 1,
+            questionText: 'You notice a machine at your workplace is making a high-pitched squealing sound. What is usually the first thing you should apply?',
+            options: ['Water', 'Sand', 'Lubricating oil', 'Glue'],
+            correctOptionIndex: 2,
             difficulty: 'easy',
-            explanation: 'A seesaw is a lever — it moves up and down on a fixed point in the middle.'
+            explanation: 'Squealing is usually caused by friction between moving parts. Lubrication reduces this friction and prevents wear.'
         ),
 
         // Medium
         Question(
             id: 'tm_m1',
             category: 'technical',
-            questionText: 'Which action is dangerous when operating a lathe?',
-            options: ['Eye protection', 'Measuring while rotating', 'Guards in place', 'Tight clothing'],
-            correctOptionIndex: 1,
+            questionText: 'You are moving a heavy rock using a long metal bar as a lever. Where should you place the small stone (fulcrum) to make lifting easiest?',
+            options: ['Right in the middle of the bar', 'Closest to your hands', 'Closest to the heavy rock', 'It makes no difference'],
+            correctOptionIndex: 2,
             difficulty: 'medium',
-            explanation: 'Measuring while the lathe is spinning can catch your hand or tool and cause injury.'
+            explanation: 'Placing the fulcrum close to the load increases your mechanical advantage, allowing you to lift more weight with less effort.'
         ),
         Question(
             id: 'tm_m2',
             category: 'technical',
-            questionText: 'Two gears are touching. If Gear A moves clockwise, Gear B moves:',
-            options: ['Clockwise', 'Counter-clockwise', 'Does not move', 'Faster'],
-            correctOptionIndex: 1,
+            questionText: 'You have a flashlight that uses three batteries in a row. You put in new batteries, but it still won’t turn on. What should you check first?',
+            options: ['If the batteries are facing the right way', 'If the plastic case is scratched', 'The color of the flashlight', 'If it is daytime'],
+            correctOptionIndex: 0,
             difficulty: 'medium',
-            explanation: 'When two gears touch, they turn in opposite directions.'
+            explanation: 'Batteries must be oriented correctly (+ to -) for electricity to flow. This is the most common user-error in simple electronics.'
         ),
         Question(
             id: 'tm_m3',
             category: 'technical',
-            questionText: 'What is the purpose of a fuse in a circuit?',
-            options: ['Increase power', 'Store energy', 'Prevent overcurrent', 'Change voltage'],
-            correctOptionIndex: 2,
+            questionText: 'You are pumping air into a bicycle tire. As the tire gets fuller, why does the pump handle become harder to push down?',
+            options: ['The pump is getting tired', 'The air pressure inside the tire is pushing back', 'The rubber is getting thicker', 'The pump is leaking'],
+            correctOptionIndex: 1,
             difficulty: 'medium',
-            explanation: 'A fuse breaks the circuit if too much electricity flows through it to stop damage or fire.'
+            explanation: 'As you compress more air into a fixed space, the internal pressure increases, requiring more force to overcome it.'
         ),
         Question(
             id: 'tm_m4',
             category: 'technical',
-            questionText: 'In a pulley system, more pulleys make lifting an object:',
-            options: ['Harder', 'Easier', 'Faster', 'Heavier'],
+            questionText: 'You see two gears of different sizes connected by a belt. If the large gear turns once, the small gear will turn:',
+            options: ['Exactly once', 'More than once', 'Less than once', 'Not at all'],
             correctOptionIndex: 1,
             difficulty: 'medium',
-            explanation: 'Adding more pulleys spreads the weight so you need less force to lift it.'
+            explanation: 'Because the small gear has a smaller circumference, it must complete multiple rotations to cover the same distance as one rotation of the large gear.'
         ),
 
         // Hard
         Question(
             id: 'tm_h1',
             category: 'technical',
-            questionText: 'Which equipment determines the "twisting" of a bar?',
-            options: ['Torsion tester', 'Micrometer', 'Caliper', 'Voltmeter'],
-            correctOptionIndex: 0,
+            questionText: 'You are designing a simple bridge to span a small gap. Which shape would provide the strongest support for a heavy load in the center?',
+            options: ['A flat plank', 'A triangle (A-frame)', 'A large square', 'A circle'],
+            correctOptionIndex: 1,
             difficulty: 'hard',
-            explanation: 'A torsion tester measures how much a bar can twist before it breaks or deforms.'
+            explanation: 'Triangles are the strongest structural shape because they do not deform under pressure; they distribute weight evenly to the supports.'
         ),
         Question(
             id: 'tm_h2',
             category: 'technical',
-            questionText: 'If a force is applied to a hydraulic piston with a small area, the pressure on a larger piston is:',
-            options: ['Lower', 'Higher', 'The same', 'Zero'],
-            correctOptionIndex: 2,
+            questionText: 'You are wiring a room with several lamps. You want to ensure that if one bulb burns out, the others stay on. How should you wire them?',
+            options: ['In a series circuit', 'In a parallel circuit', 'In a straight line', 'With thicker wires'],
+            correctOptionIndex: 1,
             difficulty: 'hard',
-            explanation: 'In hydraulics, pressure stays the same throughout the fluid. Small area × big force = same pressure on large area.'
+            explanation: 'In a parallel circuit, each lamp has its own independent path to the power source. A break in one path does not affect the others.'
         ),
         Question(
             id: 'tm_h3',
             category: 'technical',
-            questionText: 'A 10kg weight is 2m from a fulcrum. How much weight 1m away balances it?',
-            options: ['5kg', '10kg', '20kg', '40kg'],
-            correctOptionIndex: 2,
+            questionText: 'You are using a "Block and Tackle" (system of pulleys) to lift an engine. If you add more pulleys to the system, what is the trade-off?',
+            options: ['You need more force, but less rope', 'You need less force, but you must pull more rope', 'The engine gets heavier', 'The rope gets shorter'],
+            correctOptionIndex: 1,
             difficulty: 'hard',
-            explanation: 'Moment must balance: 10 kg × 2 m = 20 kg·m. On the other side: weight × 1 m = 20 kg·m → weight = 20 kg.'
+            explanation: 'Mechanical advantage is a trade-off. You save effort (force) but you have to pull the rope a much longer distance to move the load.'
         ),
         Question(
             id: 'tm_h4',
             category: 'technical',
-            questionText: 'Which safety regulation applies specifically to MIG welding?',
-            options: ['Check cylinder color', 'Hold work in hand', 'Relieve valve slowly', 'Ventilation'],
-            correctOptionIndex: 3,
+            questionText: 'You are looking at a hydraulic system. If you push a small piston down 10cm, a larger piston at the other end moves up only 2cm. Why?',
+            options: ['Energy is being lost', 'Fluid is leaking', 'Force is being multiplied at the larger piston', 'The small piston is broken'],
+            correctOptionIndex: 2,
             difficulty: 'hard',
-            explanation: 'MIG welding creates fumes and smoke, so good ventilation is required to avoid breathing in harmful gases.'
+            explanation: 'Hydraulics follow the principle of Pascal’s Law. By moving a small volume a long distance, you can move a large volume (and much heavier weight) a short distance.'
         ),
       ];
 
   // ----------------- Category 6: Interpersonal -----------------
-
     case 'interpersonal':
-      return[
+      return [
         // Easy
         Question(
             id: 'is_e1',
             category: 'interpersonal',
-            questionText: 'A customer is angry. You should:',
-            options: ['Shout back', 'Ignore them', 'Listen calmly', 'Walk away'],
-            correctOptionIndex: 2,
+            questionText: 'You are introduced to a new team member. What is the best way to make them feel welcome?',
+            options: ['Wait for them to speak first', 'Briefly introduce yourself and offer help', 'Tell them all the office gossip', 'Give them a list of tasks immediately'],
+            correctOptionIndex: 1,
             difficulty: 'easy',
-            explanation: 'Stay calm and listen to understand their problem.'
+            explanation: 'Proactive, friendly communication helps build rapport and reduces the anxiety of a new environment.'
         ),
         Question(
             id: 'is_e2',
             category: 'interpersonal',
-            questionText: 'Best way to start a presentation?',
-            options: ['Tell a joke', 'State the goal', 'Sit down', 'Read slides'],
-            correctOptionIndex: 1,
+            questionText: 'During a group discussion, you notice one person has not spoken yet. What do you do?',
+            options: ['Assume they have nothing to say', 'Keep talking to fill the silence', 'Ask them for their opinion on the topic', 'Tell them they are being too quiet'],
+            correctOptionIndex: 2,
             difficulty: 'easy',
-            explanation: 'Tell the audience what the presentation is about right at the beginning.'
+            explanation: 'Inclusive leaders ensure everyone has a voice, which often leads to better team decisions.'
         ),
         Question(
             id: 'is_e3',
             category: 'interpersonal',
-            questionText: 'If you are late for a meeting, you should:',
-            options: ['Sneak in', 'Apologize briefly', 'Blame traffic', 'Not go'],
+            questionText: 'You realize you accidentally sent an email with the wrong information. How do you handle this?',
+            options: ['Delete the email from your sent box', 'Send a quick correction and apologize', 'Wait and see if anyone notices', 'Blame a technical glitch'],
             correctOptionIndex: 1,
             difficulty: 'easy',
-            explanation: 'Say sorry quickly and take your seat without making excuses.'
+            explanation: 'Taking immediate ownership of mistakes builds trust and professional integrity.'
         ),
         Question(
             id: 'is_e4',
             category: 'interpersonal',
-            questionText: 'Teamwork means:',
-            options: ['Doing it all', 'Working together', 'Letting others work', 'Working alone'],
-            correctOptionIndex: 1,
+            questionText: 'When someone is talking to you about a problem, what is the best way to show you are listening?',
+            options: ['Checking your watch', 'Formulating your reply while they speak', 'Maintaining eye contact and nodding', 'Interrupting to give advice'],
+            correctOptionIndex: 2,
             difficulty: 'easy',
-            explanation: 'Teamwork is when everyone works together to reach a common goal.'
+            explanation: 'Non-verbal cues like eye contact demonstrate respect and active engagement.'
         ),
 
         // Medium
         Question(
             id: 'is_m1',
             category: 'interpersonal',
-            questionText: 'A colleague criticizes your work. You:',
-            options: ['Get defensive', 'Ask for specific feedback', 'Complain to HR', 'Quit'],
-            correctOptionIndex: 1,
+            questionText: 'A teammate is falling behind and it is affecting your work. How should you approach them?',
+            options: ['Report them to the boss immediately', 'Offer to help them with their tasks', 'Ask if they are okay and discuss the delay', 'Ignore it and do your own work'],
+            correctOptionIndex: 2,
             difficulty: 'medium',
-            explanation: 'Ask them to explain exactly what needs improvement so you can get better.'
+            explanation: 'Address the issue directly but with empathy to find the root cause of the delay.'
         ),
         Question(
             id: 'is_m2',
             category: 'interpersonal',
-            questionText: 'How to handle a deadline you can\'t meet?',
-            options: ['Hope they don\'t notice', 'Inform manager early', 'Do a bad job', 'Call in sick'],
-            correctOptionIndex: 1,
+            questionText: 'You disagree with a decision your supervisor made. What is the most professional response?',
+            options: ['Complain to your coworkers', 'Do the opposite of what they asked', 'Request a private meeting to share your concerns', 'Stay silent but feel resentful'],
+            correctOptionIndex: 2,
             difficulty: 'medium',
-            explanation: 'Tell your manager as soon as you know so they can help or adjust plans.'
+            explanation: 'Constructive disagreement should be handled privately and respectfully to maintain the professional relationship.'
         ),
         Question(
             id: 'is_m3',
             category: 'interpersonal',
-            questionText: 'You see a co-worker being treated unfairly. You:',
-            options: ['Stay out of it', 'Support them', 'Join in', 'Laugh'],
+            questionText: 'You are leading a meeting that is going off-topic. How do you get it back on track?',
+            options: ['Tell everyone to be quiet', 'Politely acknowledge the points and refer back to the agenda', 'End the meeting early', 'Let the conversation continue'],
             correctOptionIndex: 1,
             difficulty: 'medium',
-            explanation: 'Offer support or speak up if it is safe to do so.'
+            explanation: 'Facilitating a meeting involves balancing participation with a focus on the intended goals (the agenda).'
         ),
         Question(
             id: 'is_m4',
             category: 'interpersonal',
-            questionText: 'Active listening involves:',
-            options: ['Checking phone', 'Nodding and summarizing', 'Interrupting', 'Zoning out'],
-            correctOptionIndex: 1,
+            questionText: 'You receive "constructive criticism" that feels a bit harsh. What is your first internal reaction?',
+            options: ['Get angry and defend yourself', 'Ignore the person entirely', 'Pause and look for the useful truth in the message', 'Assume they dislike you personally'],
+            correctOptionIndex: 2,
             difficulty: 'medium',
-            explanation: 'Show you are listening by nodding and repeating back what was said.'
+            explanation: 'Emotional maturity involves separating your ego from the feedback so you can use it to grow.'
         ),
 
         // Hard
         Question(
             id: 'is_h1',
             category: 'interpersonal',
-            questionText: 'A high-stakes project has a conflict between two leaders. You:',
-            options: ['Pick a side', 'Suggest a compromise', 'Let them fight', 'Resign'],
-            correctOptionIndex: 1,
+            questionText: 'Two talented team members refuse to work together due to a personal grudge. As a leader, you:',
+            options: ['Force them to sit in a room until they like each other', 'Assign them to separate projects permanently', 'Mediate a conversation focused on shared professional goals', 'Fire one of them'],
+            correctOptionIndex: 2,
             difficulty: 'hard',
-            explanation: 'Try to find a middle solution that works for both sides.'
+            explanation: 'Mediation focuses on "professional alignment"—finding a way to work together effectively despite personal differences.'
         ),
         Question(
             id: 'is_h2',
             category: 'interpersonal',
-            questionText: 'You are given a task you don\'t understand. You:',
-            options: ['Guess', 'Ask for clarification', 'Delay it', 'Ask a friend'],
-            correctOptionIndex: 1,
+            questionText: 'You are pitching a new idea, but the senior management seems very skeptical. What is your strategy?',
+            options: ['Give up immediately', 'Talk faster and louder to convince them', 'Listen to their specific concerns and provide data-backed answers', 'Tell them they don\'t understand the future'],
+            correctOptionIndex: 2,
             difficulty: 'hard',
-            explanation: 'Ask the person who gave the task to explain it clearly.'
+            explanation: 'Influencing others requires high empathy—understanding their fears/objections and addressing them with logic.'
         ),
         Question(
             id: 'is_h3',
             category: 'interpersonal',
-            questionText: 'A client asks for something unethical. You:',
-            options: ['Do it', 'Politely refuse/report', 'Negotiate a fee', 'Ask boss to do it'],
+            questionText: 'You have to deliver bad news (like a project cancellation) to your team. How do you do it?',
+            options: ['Send a mass email on Friday evening', 'Be transparent about the reasons and allow for questions', 'Make it sound like a good thing', 'Blame the higher-ups'],
             correctOptionIndex: 1,
             difficulty: 'hard',
-            explanation: 'Say no politely and tell your manager or report it if needed.'
+            explanation: 'Transparency and allowing for a "venting" or Q&A period maintains morale during difficult transitions.'
         ),
         Question(
             id: 'is_h4',
             category: 'interpersonal',
-            questionText: 'Most important trait for a leader?',
-            options: ['Being the loudest', 'Empathy and Vision', 'Control', 'Knowing everything'],
-            correctOptionIndex: 1,
+            questionText: 'A client is making demands that go beyond the original contract. How do you manage this?',
+            options: ['Do the extra work for free to stay nice', 'Tell them "no" bluntly and hang up', 'Acknowledge the request and discuss the impact on cost/time', 'Ignore the request and hope they forget'],
+            correctOptionIndex: 2,
             difficulty: 'hard',
-            explanation: 'A good leader understands people (empathy) and has a clear direction (vision).'
+            explanation: 'Effective negotiation involves setting boundaries while maintaining a helpful, solution-oriented attitude.'
         ),
       ];
+
 
   // ----------------- Category 7: Creative -----------------
 
     case 'creative':
-        return [
-          // Easy
-          Question(
-              id: 'cr_e1',
-              category: 'creative',
-              questionText: 'Which job sounds most enjoyable to you?',
-              options: ['Following strict rules and procedures', 'Coming up with new ideas and designs', 'Analyzing data numbers', 'Managing teams and sales'],
-              correctOptionIndex: 1,
-              difficulty: 'easy',
-              explanation: 'This choice shows you like making new and original things.'
-          ),
-          Question(
-              id: 'cr_e2',
-              category: 'creative',
-              questionText: 'I enjoy activities where I can:',
-              options: ['Organize things neatly', 'Express my imagination freely', 'Solve logical puzzles', 'Help people directly'],
-              correctOptionIndex: 1,
-              difficulty: 'easy',
-              explanation: 'This shows you like using your imagination.'
-          ),
-          Question(
-              id: 'cr_e3',
-              category: 'creative',
-              questionText: 'On a free day, I\'d rather:',
-              options: ['Play sports outdoors', 'Draw, write stories, or make music', 'Read about science facts', 'Plan events with friends'],
-              correctOptionIndex: 1,
-              difficulty: 'easy',
-              explanation: 'This choice means you enjoy creative activities.'
-          ),
-          Question(
-              id: 'cr_e4',
-              category: 'creative',
-              questionText: 'A career that lets me create original work (like art, stories, or designs) appeals to me:',
-              options: ['Strongly disagree', 'Disagree', 'Agree', 'Strongly agree'],
-              correctOptionIndex: 3,
-              difficulty: 'easy',
-              explanation: 'Strongly agree = you really like creative work.'
-          ),
+      return [
+        // Easy
+        Question(
+            id: 'cr_e1',
+            category: 'creative',
+            questionText: 'When working on a school project, which part do you enjoy most?',
+            options: ['Formatting the bibliography', 'Designing the layout and visuals', 'Proofreading for errors', 'Organizing the project schedule'],
+            correctOptionIndex: 1,
+            difficulty: 'easy',
+            explanation: 'Focusing on visuals and layout indicates an interest in aesthetic design.'
+        ),
+        Question(
+            id: 'cr_e2',
+            category: 'creative',
+            questionText: 'How do you feel about trying a new hobby like photography or painting?',
+            options: ['It seems boring', 'I would rather play video games', 'I find it exciting to learn new ways to create', 'I prefer sports'],
+            correctOptionIndex: 2,
+            difficulty: 'easy',
+            explanation: 'Enthusiasm for artistic hobbies is a primary indicator of a creative personality.'
+        ),
+        Question(
+            id: 'cr_e3',
+            category: 'creative',
+            questionText: 'I prefer clothes and accessories that:',
+            options: ['Are standard and blend in', 'Are practical for work only', 'Express my unique personal style', 'Are the cheapest available'],
+            correctOptionIndex: 2,
+            difficulty: 'easy',
+            explanation: 'Using personal style as a form of expression is a sign of daily creativity.'
+        ),
+        Question(
+            id: 'cr_e4',
+            category: 'creative',
+            questionText: 'Do you enjoy storytelling, whether through writing, drawing, or speaking?',
+            options: ['No, I prefer facts', 'Sometimes, if I have to', 'Yes, I love building narratives', 'Only if it is for a grade'],
+            correctOptionIndex: 2,
+            difficulty: 'easy',
+            explanation: 'Storytelling is a core component of many creative careers like marketing and film.'
+        ),
 
-          // Medium
-          Question(
-              id: 'cr_m1',
-              category: 'creative',
-              questionText: 'Which career would you enjoy more?',
-              options: ['Accountant handling finances', 'Graphic designer creating visuals', 'Engineer building machines', 'Teacher instructing classes'],
-              correctOptionIndex: 1,
-              difficulty: 'medium',
-              explanation: 'Graphic designer is about making new visual ideas.'
-          ),
-          Question(
-              id: 'cr_m2',
-              category: 'creative',
-              questionText: 'I would like a job that involves:',
-              options: ['Following set instructions every day', 'Inventing new concepts or experimenting with ideas', 'Collecting and organizing data', 'Negotiating deals'],
-              correctOptionIndex: 1,
-              difficulty: 'medium',
-              explanation: 'Inventing and experimenting = creative thinking.'
-          ),
-          Question(
-              id: 'cr_m3',
-              category: 'creative',
-              questionText: 'Working on projects with no clear "right" answer, where I can explore many possibilities, sounds:',
-              options: ['Frustrating', 'Okay sometimes', 'Exciting and preferable', 'Only if structured'],
-              correctOptionIndex: 2,
-              difficulty: 'medium',
-              explanation: 'Exciting = you enjoy open-ended creative work.'
-          ),
-          Question(
-              id: 'cr_m4',
-              category: 'creative',
-              questionText: 'A role like writing scripts, composing music, or designing apps would suit me because:',
-              options: ['I prefer routine tasks', 'I love expressing unique ideas', 'I\'d rather analyze problems logically', 'I enjoy leading others'],
-              correctOptionIndex: 1,
-              difficulty: 'medium',
-              explanation: 'You like sharing your own original ideas.'
-          ),
+        // Medium
+        Question(
+            id: 'cr_m1',
+            category: 'creative',
+            questionText: 'If you were asked to solve a problem at work, would you prefer to:',
+            options: ['Use a method that has worked before', 'Brainstorm a completely new approach', 'Ask a manager for the answer', 'Look it up in a manual'],
+            correctOptionIndex: 1,
+            difficulty: 'medium',
+            explanation: 'Innovation and brainstorming are key traits of creative problem solvers.'
+        ),
+        Question(
+            id: 'cr_m2',
+            category: 'creative',
+            questionText: 'Which of these environments sounds most inspiring to you?',
+            options: ['A quiet, structured library', 'A busy laboratory', 'A studio filled with tools and materials', 'A corporate boardroom'],
+            correctOptionIndex: 2,
+            difficulty: 'medium',
+            explanation: 'Creative individuals often thrive in "maker spaces" or studios.'
+        ),
+        Question(
+            id: 'cr_m3',
+            category: 'creative',
+            questionText: 'How do you react when your work is criticized for being "too unusual"?',
+            options: ['I try to make it more normal', 'I feel discouraged and stop', 'I take it as a compliment to my originality', 'I get angry'],
+            correctOptionIndex: 2,
+            difficulty: 'medium',
+            explanation: 'Valuing originality over conformity is essential for creative growth.'
+        ),
+        Question(
+            id: 'cr_m4',
+            category: 'creative',
+            questionText: 'Which professional skill would you most like to master?',
+            options: ['Data encryption', 'Visual storytelling/branding', 'Financial auditing', 'Public policy writing'],
+            correctOptionIndex: 1,
+            difficulty: 'medium',
+            explanation: 'Visual storytelling and branding are central to the creative industry.'
+        ),
 
-          // Hard
-          Question(
-              id: 'cr_h1',
-              category: 'creative',
-              questionText: 'If a high-paying job required strict rules and repetition vs. a lower-paying one allowing full creative freedom, I\'d choose:',
-              options: ['The high-paying structured job', 'The creative one if it pays enough', 'The creative one even if it pays less', 'Depends on other factors'],
-              correctOptionIndex: 2,
-              difficulty: 'hard',
-              explanation: 'Choosing creative even if it pays less = very strong creative interest.'
-          ),
-          Question(
-              id: 'cr_h2',
-              category: 'creative',
-              questionText: 'I see myself thriving in a career that demands:',
-              options: ['Precision and accuracy above all', 'Originality and thinking outside the box', 'Helping and supporting people emotionally', 'Persuading and leading groups'],
-              correctOptionIndex: 1,
-              difficulty: 'hard',
-              explanation: 'Originality and new thinking = creative strength.'
-          ),
-          Question(
-              id: 'cr_h3',
-              category: 'creative',
-              questionText: 'Compared to a routine office job with clear guidelines, one involving brainstorming, prototyping ideas, or artistic expression feels:',
-              options: ['Too unpredictable', 'More rewarding long-term', 'Neutral', 'Fun short-term only'],
-              correctOptionIndex: 1,
-              difficulty: 'hard',
-              explanation: 'More rewarding long-term = you value creative work highly.'
-          ),
-          Question(
-              id: 'cr_h4',
-              category: 'creative',
-              questionText: 'The most important factor in choosing a career for me is:',
-              options: ['High salary and job security', 'Opportunities to be creative and innovative', 'Intellectual analysis and research', 'Building relationships and teamwork'],
-              correctOptionIndex: 1,
-              difficulty: 'hard',
-              explanation: 'Creative opportunities being most important = strong creative preference.'
-          ),
-        ]
-        ;
+        // Hard
+        Question(
+            id: 'cr_h1',
+            category: 'creative',
+            questionText: 'In a team setting, which role do you naturally gravitate toward?',
+            options: ['The "Producer" who keeps everyone on track', 'The "Visionary" who provides the core concept', 'The "Researcher" who gathers data', 'The "Editor" who checks for mistakes'],
+            correctOptionIndex: 1,
+            difficulty: 'hard',
+            explanation: 'The visionary role requires high-level creative synthesis and conceptual thinking.'
+        ),
+        Question(
+            id: 'cr_h2',
+            category: 'creative',
+            questionText: 'How do you feel about "ambiguity" (not having a clear path or final goal at the start)?',
+            options: ['I find it stressful and unproductive', 'I prefer clear instructions', 'I embrace it as a chance to explore', 'I avoid it at all costs'],
+            correctOptionIndex: 2,
+            difficulty: 'hard',
+            explanation: 'High creativity is often linked to a high tolerance for ambiguity.'
+        ),
+        Question(
+            id: 'cr_h3',
+            category: 'creative',
+            questionText: 'Which statement best describes your view on "Standard Operating Procedures"?',
+            options: ['They are necessary for safety and efficiency', 'They are helpful guides for everyone', 'They can be useful but often limit innovation', 'They are the only way to work'],
+            correctOptionIndex: 2,
+            difficulty: 'hard',
+            explanation: 'Creative thinkers often see traditional rules as potential barriers to better ideas.'
+        ),
+        Question(
+            id: 'cr_h4',
+            category: 'creative',
+            questionText: 'What motivates you more when finishing a difficult project?',
+            options: ['The relief that it is finally over', 'The recognition from my superiors', 'The pride in having created something unique', 'The financial reward/bonus'],
+            correctOptionIndex: 2,
+            difficulty: 'hard',
+            explanation: 'Intrinsic motivation based on the act of creation is a hallmark of the creative professional.'
+        ),
+      ];
 
   // ----------------- Category 8: Physical -----------------
 
     case 'physical':
-        return [
-          // Easy
-          Question(
-              id: 'pa_e1',
-              category: 'physical',
-              questionText: 'Which type of job sounds most enjoyable to you?',
-              options: ['Sitting at a desk all day', 'Being physically active and moving around', 'Mostly thinking and planning', 'Talking online'],
-              correctOptionIndex: 1,
-              difficulty: 'easy',
-              explanation: 'This shows you like jobs that involve movement.'
-          ),
-          Question(
-              id: 'pa_e2',
-              category: 'physical',
-              questionText: 'I prefer activities where I can:',
-              options: ['Read quietly', 'Use my hands and body a lot', 'Solve paper puzzles', 'Create digitally'],
-              correctOptionIndex: 1,
-              difficulty: 'easy',
-              explanation: 'Using hands and body = physical preference.'
-          ),
-          Question(
-              id: 'pa_e3',
-              category: 'physical',
-              questionText: 'On a free day, I\'d rather:',
-              options: ['Watch movies', 'Play sports or hike', 'Play video games', 'Read books'],
-              correctOptionIndex: 1,
-              difficulty: 'easy',
-              explanation: 'Sports or hiking = active physical choice.'
-          ),
-          Question(
-              id: 'pa_e4',
-              category: 'physical',
-              questionText: 'A career that keeps you on your feet and active appeals to me:',
-              options: ['Strongly disagree', 'Disagree', 'Agree', 'Strongly agree'],
-              correctOptionIndex: 3,
-              difficulty: 'easy',
-              explanation: 'Strongly agree = you really want physical work.'
-          ),
+      return [
+        // Easy
+        Question(
+            id: 'pa_e1',
+            category: 'physical',
+            questionText: 'When you have to learn how something works, you prefer to:',
+            options: ['Read the manual', 'Watch a video', 'Take it apart and touch the pieces', 'Listen to a lecture'],
+            correctOptionIndex: 2,
+            difficulty: 'easy',
+            explanation: 'Tactile learning (learning by doing) is a major sign of physical career suitability.'
+        ),
+        Question(
+            id: 'pa_e2',
+            category: 'physical',
+            questionText: 'How do you feel about working with your hands and getting them dirty?',
+            options: ['I hate it', 'I prefer to stay clean', 'I don\'t mind at all if I\'m building something', 'Only if I wear gloves'],
+            correctOptionIndex: 2,
+            difficulty: 'easy',
+            explanation: 'Willingness to engage in "messy" work is common in trade and physical careers.'
+        ),
+        Question(
+            id: 'pa_e3',
+            category: 'physical',
+            questionText: 'At the end of a long day, you feel most satisfied if you:',
+            options: ['Finished a book', 'Built or fixed something real', 'Won a debate', 'Organized your emails'],
+            correctOptionIndex: 1,
+            difficulty: 'easy',
+            explanation: 'Physical satisfaction often comes from tangible results you can see and touch.'
+        ),
+        Question(
+            id: 'pa_e4',
+            category: 'physical',
+            questionText: 'I would rather work in a:',
+            options: ['Small cubicle', 'Home office', 'Workshop or outdoors', 'Quiet library'],
+            correctOptionIndex: 2,
+            difficulty: 'easy',
+            explanation: 'Workshops and the outdoors are the primary environments for physical roles.'
+        ),
 
-          // Medium
-          Question(
-              id: 'pa_m1',
-              category: 'physical',
-              questionText: 'Which career would you enjoy more?',
-              options: ['Office data analyst', 'Construction worker building things', 'Software coder', 'Accountant'],
-              correctOptionIndex: 1,
-              difficulty: 'medium',
-              explanation: 'Construction involves lots of physical movement and using your body.'
-          ),
-          Question(
-              id: 'pa_m2',
-              category: 'physical',
-              questionText: 'I would like a job that involves:',
-              options: ['Mostly sitting at a computer', 'Lifting, carrying, or using tools/machines', 'Writing reports', 'Managing from a desk'],
-              correctOptionIndex: 1,
-              difficulty: 'medium',
-              explanation: 'Lifting and using tools = physical hands-on work.'
-          ),
-          Question(
-              id: 'pa_m3',
-              category: 'physical',
-              questionText: 'Working outdoors in different weather conditions sounds:',
-              options: ['Unappealing', 'Okay sometimes', 'Exciting and preferable', 'Only if paid extra'],
-              correctOptionIndex: 2,
-              difficulty: 'medium',
-              explanation: 'Exciting and preferable = you enjoy active outdoor work.'
-          ),
-          Question(
-              id: 'pa_m4',
-              category: 'physical',
-              questionText: 'A hands-on job like repairing vehicles or machinery would suit me because:',
-              options: ['I hate getting dirty', 'I enjoy fixing things physically', 'I\'d rather design on computer', 'I prefer theory'],
-              correctOptionIndex: 1,
-              difficulty: 'medium',
-              explanation: 'You like physically fixing and working on real things.'
-          ),
+        // Medium
+        Question(
+            id: 'pa_m1',
+            category: 'physical',
+            questionText: 'Which of these tasks sounds most interesting?',
+            options: ['Updating a spreadsheet', 'Operating a forklift or crane', 'Writing a press release', 'Researching history'],
+            correctOptionIndex: 1,
+            difficulty: 'medium',
+            explanation: 'Operating machinery requires physical coordination and spatial awareness.'
+        ),
+        Question(
+            id: 'pa_m2',
+            category: 'physical',
+            questionText: 'How would you describe your energy levels during the day?',
+            options: ['I get restless if I sit too long', 'I prefer to stay still', 'I like sitting but with breaks', 'I have low physical energy'],
+            correctOptionIndex: 0,
+            difficulty: 'medium',
+            explanation: 'Restlessness when sitting is a sign that your body is built for active work.'
+        ),
+        Question(
+            id: 'pa_m3',
+            category: 'physical',
+            questionText: 'In a group project to build a model, you are the one who:',
+            options: ['Does the research', 'Writes the report', 'Assembles the actual parts', 'Gives the presentation'],
+            correctOptionIndex: 2,
+            difficulty: 'medium',
+            explanation: 'Assembling parts shows a preference for "Kinesthetic" tasks.'
+        ),
+        Question(
+            id: 'pa_m4',
+            category: 'physical',
+            questionText: 'Which career path sounds most rewarding?',
+            options: ['Lawyer', 'Physiotherapist or Athlete', 'Web Designer', 'Banker'],
+            correctOptionIndex: 1,
+            difficulty: 'medium',
+            explanation: 'Physiotherapy and athletics require high levels of physical mastery and movement.'
+        ),
 
-          // Hard
-          Question(
-              id: 'pa_h1',
-              category: 'physical',
-              questionText: 'If a high-paying job required long physical labor vs. lower-paying desk job, I\'d choose:',
-              options: ['Desk job every time', 'Physical if pays well enough', 'Physical even if pays less', 'Depends'],
-              correctOptionIndex: 2,
-              difficulty: 'hard',
-              explanation: 'Choosing physical even if it pays less = very strong preference for active work.'
-          ),
-          Question(
-              id: 'pa_h2',
-              category: 'physical',
-              questionText: 'I see myself thriving in a career that demands:',
-              options: ['Mental focus without moving', 'Constant physical coordination and energy', 'Mostly social interaction', 'Creative planning'],
-              correctOptionIndex: 1,
-              difficulty: 'hard',
-              explanation: 'Constant physical coordination and energy = strong fit for physical jobs.'
-          ),
-          Question(
-              id: 'pa_h3',
-              category: 'physical',
-              questionText: 'Compared to routine office tasks, a job with travel, heavy equipment, or athletic demands feels:',
-              options: ['Too tiring', 'More rewarding long-term', 'Neutral', 'Short-term only'],
-              correctOptionIndex: 1,
-              difficulty: 'hard',
-              explanation: 'More rewarding long-term = you find physical/active work more satisfying.'
-          ),
-          Question(
-              id: 'pa_h4',
-              category: 'physical',
-              questionText: 'The most important factor in choosing a career for me is:',
-              options: ['High salary/stability', 'Being physically active/using my body', 'Intellectual challenge', 'Helping others emotionally'],
-              correctOptionIndex: 1,
-              difficulty: 'hard',
-              explanation: 'Physical activity being most important = strong preference for hands-on, moving jobs.'
-          ),
-        ]
-        ;
+        // Hard
+        Question(
+            id: 'pa_h1',
+            category: 'physical',
+            questionText: 'How do you feel about jobs that require high physical stamina (standing for 8 hours)?',
+            options: ['I could never do that', 'It sounds exhausting', 'I prefer it over being stuck in a chair', 'Only if I can sit half the time'],
+            correctOptionIndex: 2,
+            difficulty: 'hard',
+            explanation: 'Preferring standing/movement over sitting indicates a high "Physical" drive.'
+        ),
+        Question(
+            id: 'pa_h2',
+            category: 'physical',
+            questionText: 'Would you take a job that involves traveling to remote sites to do manual repairs?',
+            options: ['No, I want a stable office', 'Maybe for a high salary', 'Yes, I enjoy the challenge and movement', 'Only if it is nearby'],
+            correctOptionIndex: 2,
+            difficulty: 'hard',
+            explanation: 'Willingness to travel for manual work shows a commitment to the physical field.'
+        ),
+        Question(
+            id: 'pa_h3',
+            category: 'physical',
+            questionText: 'Regarding safety gear (boots, helmets, vests), you feel:',
+            options: ['They are uncomfortable and annoying', 'I\'d rather work where they aren\'t needed', 'They are part of a job I enjoy', 'I prefer professional suits'],
+            correctOptionIndex: 2,
+            difficulty: 'hard',
+            explanation: 'Accepting the "uniform" of physical labor is a key indicator of career fit.'
+        ),
+        Question(
+            id: 'pa_h4',
+            category: 'physical',
+            questionText: 'Which of these would be your "dream" accomplishment?',
+            options: ['Writing a best-selling novel', 'Developing a famous app', 'Renovating a house or building a bridge', 'Managing a major corporation'],
+            correctOptionIndex: 2,
+            difficulty: 'hard',
+            explanation: 'Large-scale physical construction or renovation is the peak of the "Physical" category.'
+        ),
+      ];
 
     default:
       return [];
