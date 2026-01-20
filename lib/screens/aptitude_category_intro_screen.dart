@@ -17,6 +17,8 @@ class CategoryIntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      // App bar showing category progress
       appBar: AppBar(
         title: Text('Category ${currentIndex + 1}/$totalCategories'),
       ),
@@ -25,7 +27,9 @@ class CategoryIntroScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
+
           children: [
+            // Display the category title
             Text(
               category.title,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
@@ -35,12 +39,16 @@ class CategoryIntroScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 24),
+
+            // Display the category definition
             Text(
               category.definition,
               style: Theme.of(context).textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 48),
+
+            // Button to start the quiz
             ElevatedButton.icon(
               icon: const Icon(Icons.play_arrow),
               label: const Text('Start Questions'),
