@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 
-part 'questions.g.dart';
+part 'aptitudeQuestions.g.dart';
 
 @HiveType(typeId: 1)
 class Question {
